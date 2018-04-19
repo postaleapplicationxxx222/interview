@@ -1,3 +1,7 @@
+"""
+Handles an SAP Generic Employees.
+"""
+
 from enum import Enum
 import random
 
@@ -5,6 +9,10 @@ import utils
 
 
 class Grade(Enum):
+    """
+    Represents a grade level at SAP.
+    """
+
     JUNIOR = 0
     MID_LEVEL = 1
     ADVANCED = 2
@@ -12,13 +20,17 @@ class Grade(Enum):
 
     @staticmethod
     def random_grade():
+        """
+        Returns a random grade.
+        """
         return random.choice(list(Grade))
 
 
 class Employee:
     """
-    A Generic SAP Employee.
+    Represents an SAP Generic Employee.
     """
+
     base_salary = None
 
     def __init__(self, first_name, last_name, email, grade, salary, identifier=None):
@@ -31,6 +43,9 @@ class Employee:
 
     @classmethod
     def random_attrs(cls):
+        """
+        Returns random attributes (to instantiate random Employees).
+        """
         random_first_name = utils.get_random_first_name()
         random_last_name = utils.get_random_last_name()
         random_grade = Grade.random_grade()
@@ -47,5 +62,9 @@ class Employee:
 
     @classmethod
     def random_salary(cls, grade):
+        """
+        Returns a random salary.
+        The higher the grade, the higher the salary is (in average).
+        """
         grade_booster = (1 + grade.value / 10)
         return str(cls.base_salary * grade_booster + random.randint(0, grade.value * 10000))

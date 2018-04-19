@@ -1,12 +1,16 @@
+"""
+Main entry point.
+Generates SAP workforce.
+"""
+
 from factory import EmployeeFactory
-from developer import Developer
 
 
 if __name__ == '__main__':
-    n_sap_employees = 100
+    N_SAP_EMPLOYEES = 1000
 
     # Ratios of employees by type
-    sap_ratios = {
+    SAP_RATIOS = {
         'sales': 0.25,
         'developer': 0.35,
         'project_manager': 0.25,
@@ -14,7 +18,7 @@ if __name__ == '__main__':
     }
 
     print('Generating workforce...')
-    sap_workforce = EmployeeFactory.generate_workforce(n_sap_employees, sap_ratios)
+    sap_workforce = EmployeeFactory.generate_workforce(N_SAP_EMPLOYEES, SAP_RATIOS)
     print('Workforce generated.\n')
 
     print('Employee of the month is:', sap_workforce[0])
