@@ -1,3 +1,7 @@
+"""
+Holds utilities functions.
+"""
+
 import random
 
 
@@ -44,8 +48,14 @@ LAST_NAMES = [
 
 
 def get_random_first_name():
+    """
+    Returns a random firstname.
+    """
     return random.choice(FIRST_NAMES)
 
 
 def get_random_last_name():
+    """
+    Returns a random lastname.
+    """
     return random.choice(LAST_NAMES)
