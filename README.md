@@ -10,6 +10,8 @@ You will be asked to develop new features and make improvements.
 
 *Please take some time to explore the code before the interview.*
 
+please notice that you will be evaluated 
+
 ## On-board
 Please `fork` this repository and `clone` *your fork* on your computer.
 
